@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pahingi ng lambing boss ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('https://wallpapers.com/images/hd/rose-laptop-mh8hqtch27wpcbfs.jpg') no-repeat center center fixed; /* Use the resized image */
+            background-size: cover; /* Ensure it covers the page */
+            background-position: center center; /* Center the image */
+            background-attachment: fixed; /* Keeps it fixed when scrolling */
+            font-family: 'Poppins', sans-serif;
+        }
+        .wrapper {
+            text-align: center;
+            padding: 30px;
+            border-radius: 25px;
+            background: rgba(241, 224, 230, 0.8); /* Semi-transparent background for the wrapper */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+        h2 {
+            font-size: 2.5em;
+            color: #e94d58;
+            margin: 15px 0;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+        }
+        .gif {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn-group {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            width: 160px;
+            height: 50px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s ease;
+            border: none;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        .yes-btn {
+            background: #e94d58;
+            color: white;
+        }
+        .yes-btn:hover {
+            background: #ff3b5f;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(255, 59, 95, 0.5);
+        }
+        .no-btn {
+            background: #f7c8d2;
+            color: #9e2a47;
+            position: relative;
+        }
+        .no-btn:hover {
+            transform: scale(1.1);
+            background: #f78ea6;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .no-btn:active {
+            transition: transform 0.1s ease-in-out;
+        }
+        .spotify-player iframe {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="question">Do you love me? ❤️</h2>
+        <img class="gif" alt="gif" src="https://media.tenor.com/ZyqhFIPi2OgAAAAM/cat-crying-cat.gif"/>
+        <div class="btn-group">
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
+    </div>
+
+    <!-- Spotify Embed for the updated song -->
+    <div class="spotify-player" style="display: none;">
+        <iframe src="https://open.spotify.com/embed/track/1Qrdlkgg9I4J7r3P4kZNwr" width="300" height="380" frameborder="0" allow="encrypted-media"></iframe>
+    </div>
+
+    <script>
+        const wrapper = document.querySelector(".wrapper");
+        const question = document.querySelector(".question");
+        const gif = document.querySelector(".gif");
+        const yesBtn = document.querySelector(".yes-btn");
+        const noBtn = document.querySelector(".no-btn");
+        const spotifyPlayer = document.querySelector(".spotify-player");
+
+        yesBtn.addEventListener("click", () => {
+            question.innerHTML = "I love you too! Call tayo maya 😘";
+            gif.src = "https://media.tenor.com/FUXUChJcZxkAAAAM/catride.gif";
+            spotifyPlayer.style.display = "block"; // Show the Spotify player when YES is clicked
+        });
+
+        noBtn.addEventListener("mouseenter", () => {
+            const noBtnRect = noBtn.getBoundingClientRect();
+            const maxX = window.innerWidth - noBtnRect.width;
+            const maxY = window.innerHeight - noBtnRect.height;
+
+            // Generate random position values
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            // Move the button away when trying to hover it
+            noBtn.style.position = "absolute";
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        });
+    </script>
+</body>
+</html>
